@@ -1,0 +1,8 @@
+1.是javascript的一个对象，按照某种规则去匹配符合条件的字符串
+有两种方法实例化对象
+字面量      	 var obj = {}; var reg = /\bis\b/g
+构造函数		 var obj = new Object; var reg = new RegExp()	
+2.字母意义
+g : global         代表全文搜索
+i : ignore case    忽略大小写，默认大小写敏感
+m : multiple lines 多行搜索
