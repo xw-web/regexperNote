@@ -2,7 +2,54 @@
 有两种方法实例化对象
 字面量      	 var obj = {}; var reg = /\bis\b/g
 构造函数		 var obj = new Object; var reg = new RegExp()	
+==============================
 2.字母意义
 g : global         代表全文搜索
 i : ignore case    忽略大小写，默认大小写敏感
 m : multiple lines 多行搜索
+================================
+3.方法
+正则方法
+test():匹配成功返回true,失败则是false
+var str = '8abcdefg_abc'
+var reg = /(abc+)/;
+console.log(reg.test(str))
+true <== 结果
+exec():返回匹配项数组，index属性是指第一个匹配项
+input 代表原字符串
+var str = '8abcdefg_abc'
+var reg = /(abc+)/;
+console.log(reg.exec(str))
+["abc", "abc", index: 1, input: "8abcdefg_abc", groups: undefined] <== 结果
+var reg = /123/
+console.log(reg.exec(str))
+null <== 结果
+--------------------------------------------
+字符串
+match();
+var str = '234234GGdfkgjldkfj'
+var reg = /GG/
+console.log(str.match(reg))
+["GG", index: 6, input: "234234GGdfkgjldkfj", groups: undefined] <== 结果
+
+str = 'GG3243GG234GG'
+reg = /GG/g
+console.log(str.match(reg))
+["GG", "GG", "GG"] <== 结果
+
+search()：符合匹配则返回匹配到的第一个的索引,否则返回-1
+str = 'GG3243GG234GG'
+reg = /abc/;
+console.log(str.search(reg))
+-1 <== 结果
+str = 'sdfsdfaffdsabc'
+reg = /abc/;
+console.log(str.search(reg))
+11 <== 结果
+
+replace()
+str = 'sdfsdfsd452353tgdweGG'
+reg = /GG/;
+console.log(str.replace(reg,'MM')); //匹配规则 , 替换内容
+sdfsdfsd452353tgdweMM <== 结果
+
