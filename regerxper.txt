@@ -25,7 +25,7 @@ var reg = /123/
 console.log(reg.exec(str))
 null <== 结果
 --------------------------------------------
-字符串
+字符串方法
 match();
 var str = '234234GGdfkgjldkfj'
 var reg = /GG/
